@@ -6,8 +6,8 @@ export const GifGrid = ({ category }) => {
     const { images, isLoading } = useFetchGifs(category);
 
     return (
-        <>
-            <h3>{category.toUpperCase()}</h3>
+        <div className="category-grid">
+            <h3>{category.toUpperCase()}:</h3>
             {
                 isLoading && <h2>Cargando...</h2>
             }
@@ -19,6 +19,6 @@ export const GifGrid = ({ category }) => {
                 }
 
             </div>
-        </>
+        </div>
     )
 }

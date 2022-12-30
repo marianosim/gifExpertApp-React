@@ -3,7 +3,7 @@ import { AddCategory, GifGrid } from "./components";
 
 
 function GifExpertApp() {
-    const [categories, setCategories] = useState(['Pokemon']);
+    const [categories, setCategories] = useState([]);
     const onAddCategory = (newCategory) => {
         if (categories.includes(newCategory)) return;
         setCategories([newCategory, ...categories]);
@@ -13,10 +13,16 @@ function GifExpertApp() {
         <>
             <div className="header">
                 <h1>Gif Expert App</h1>
-            <AddCategory onNewCategory={onAddCategory} />
+                <div className="search-bar">
+                    <AddCategory onNewCategory={onAddCategory} />
+                    <input type='button' value='Borrar todo' onClick={() => setCategories([])}Borrar todo/>
+                </div>
             </div>
             {
-                categories.map((category) =>
+                categories.length < 1 && <h2>¡Empieza a buscar tus GIFs preferidos!</h2>
+            }
+            {
+                categories.map(category =>
                     <GifGrid key={category}
                         category={category} />
                 )
