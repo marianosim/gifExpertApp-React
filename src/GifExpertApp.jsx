@@ -15,7 +15,7 @@ function GifExpertApp() {
                 <h1>Gif Expert App</h1>
                 <div className="search-bar">
                     <AddCategory onNewCategory={onAddCategory} />
-                    <input type='button' value='Borrar todo' onClick={() => setCategories([])}Borrar todo/>
+                    <input type='button' value='Borrar todo' onClick={() => setCategories([])}/>
                 </div>
             </div>
             {
